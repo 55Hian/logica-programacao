@@ -17,7 +17,7 @@ let media;
 
 console.log("Inicio do processo.");
 
-nota1 = parseInt(prompt("Digite a primeira nota do aluno"));
+nota1 = parseInt(prompt("Digite a primeira nota do aluno"));git 
 nota2 = parseInt(prompt("Digite a segunda nota do aluno"));
 nota3 = parseInt(prompt("Digite a terceira nota do aluno"));
 
