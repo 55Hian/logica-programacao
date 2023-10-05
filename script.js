@@ -7,34 +7,56 @@ console.log("Testando o console")
 console.log("\n")
 
 
-let nota1;
-let nota2;
-let nota3;
 
-let mediaminima = 5;
+function mediaAluno() {
+    
+    console.log("Inicio do processo.");
 
-let media;
+// declara variavel
+    let nota1;
+    let nota2;
+    let nota3;
+    let media;
+    let mediaminima = 5;
 
-console.log("Inicio do processo.");
+// Busca dados nos inputs do html
+    nota1 = parseInt(document.getElementById("nota1").value);
+    nota2 = parseInt(document.getElementById("nota2").value);
+    nota3 = parseInt(document.getElementById("nota3").value);
 
-nota1 = parseInt(prompt("Digite a primeira nota do aluno"));git 
-nota2 = parseInt(prompt("Digite a segunda nota do aluno"));
-nota3 = parseInt(prompt("Digite a terceira nota do aluno"));
+// calcula média
+    media = (nota1 + nota2 + nota3)/3;
 
-media = (nota1 + nota2 + nota3)/3;
+// mostra notas e média
 
-console.log("\n")
-console.log("\t A primeira nota do aluno é: " + nota1)
-console.log("\t A segunda nota do aluno é: " + nota2)
-console.log("\t A terceira nota do aluno é: " + nota3)
-console.log("\n")
-console.log ("\t A nota média do aluno é: " + media);
-console.log("\n")
+    // no console
+    console.log("\n")
+    console.log("\t A primeira nota do aluno é: " + nota1)
+    console.log("\t A segunda nota do aluno é: " + nota2)
+    console.log("\t A terceira nota do aluno é: " + nota3)
+    console.log("\n")
+    
+    // na pagina
+    document.getElementById('resultado').innerHTML =  '<br>' + 'A média do aluno é: ' + media + '<br>';
 
-if (media < mediaminima){
-    console.log("\t O aluno está reprovado!");
-} else {
-    console.log("\t O aluno está aprovado!");
+    // no console
+    console.log ("\t A nota média do aluno é: " + media);
+    console.log("\n")
+
+    // logica que define se o aluno está aprovado, reprovado ou se vai para exame
+    if (media < mediaminima){
+        console.log("\t O aluno está reprovado!");  // mostra no console
+        document.getElementById('resultado').innerHTML +=  "O aluno está reprovado!";     // mostra na pagina
+    } else if(media > mediaminima){
+        console.log("\t O aluno está aprovado!");   // mostra no console
+        document.getElementById('resultado').innerHTML += "O aluno está aprovado!";     // mostra na pagina
+    } else{
+        console.log("\t Aluno precisa realizar exame");     // mostra no console
+        document.getElementById('resultado').innerHTML += "Aluno precisa realizar exame";     // mostra na pagina
+    }
+
+    console.log("\n")
+    console.log("Fim do processo.")
 }
-console.log("\n")
-console.log("Fim do processo.")
+
+mediaAluno();
